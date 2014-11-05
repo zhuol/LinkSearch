@@ -17,6 +17,7 @@ namespace LinkSearch
         public LinkSearch()
         {
             InitializeComponent();
+            webBrowser.Navigate("https://www.google.com");
         }
 
         private void Browse_Click(object sender, EventArgs e)
