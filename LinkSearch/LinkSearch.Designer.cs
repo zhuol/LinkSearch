@@ -39,8 +39,8 @@
             this.injectionLog = new System.Windows.Forms.ListBox();
             this.sqli = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Browser = new System.Windows.Forms.GroupBox();
             this.Export = new System.Windows.Forms.Button();
+            this.Browser = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Browser.SuspendLayout();
@@ -54,6 +54,7 @@
             this.keyword.Name = "keyword";
             this.keyword.Size = new System.Drawing.Size(207, 20);
             this.keyword.TabIndex = 2;
+            this.keyword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyword_KeyDown);
             // 
             // webBrowser
             // 
@@ -72,6 +73,7 @@
             this.url.Name = "url";
             this.url.Size = new System.Drawing.Size(722, 20);
             this.url.TabIndex = 4;
+            this.url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.url_KeyDown);
             // 
             // Browse
             // 
@@ -132,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.injectionLog.FormattingEnabled = true;
             this.injectionLog.Location = new System.Drawing.Point(5, 246);
-            this.injectionLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.injectionLog.Margin = new System.Windows.Forms.Padding(2);
             this.injectionLog.Name = "injectionLog";
             this.injectionLog.Size = new System.Drawing.Size(270, 264);
             this.injectionLog.TabIndex = 8;
@@ -141,7 +143,7 @@
             // 
             this.sqli.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sqli.Location = new System.Drawing.Point(218, 223);
-            this.sqli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sqli.Margin = new System.Windows.Forms.Padding(2);
             this.sqli.Name = "sqli";
             this.sqli.Size = new System.Drawing.Size(56, 19);
             this.sqli.TabIndex = 9;
@@ -160,29 +162,13 @@
             this.groupBox1.Controls.Add(this.injectionLog);
             this.groupBox1.Controls.Add(this.urlList);
             this.groupBox1.Location = new System.Drawing.Point(9, 25);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(279, 519);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SQLi";
-            // 
-            // Browser
-            // 
-            this.Browser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Browser.Controls.Add(this.webBrowser);
-            this.Browser.Controls.Add(this.url);
-            this.Browser.Controls.Add(this.Browse);
-            this.Browser.Location = new System.Drawing.Point(299, 25);
-            this.Browser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Browser.Name = "Browser";
-            this.Browser.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Browser.Size = new System.Drawing.Size(803, 519);
-            this.Browser.TabIndex = 11;
-            this.Browser.TabStop = false;
-            this.Browser.Text = "Browser";
             // 
             // Export
             // 
@@ -194,6 +180,22 @@
             this.Export.Text = "Export";
             this.Export.UseVisualStyleBackColor = true;
             this.Export.Click += new System.EventHandler(this.Export_Click);
+            // 
+            // Browser
+            // 
+            this.Browser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Browser.Controls.Add(this.webBrowser);
+            this.Browser.Controls.Add(this.url);
+            this.Browser.Controls.Add(this.Browse);
+            this.Browser.Location = new System.Drawing.Point(299, 25);
+            this.Browser.Margin = new System.Windows.Forms.Padding(2);
+            this.Browser.Name = "Browser";
+            this.Browser.Padding = new System.Windows.Forms.Padding(2);
+            this.Browser.Size = new System.Drawing.Size(803, 519);
+            this.Browser.TabIndex = 11;
+            this.Browser.TabStop = false;
+            this.Browser.Text = "Browser";
             // 
             // LinkSearch
             // 

@@ -18,20 +18,22 @@ namespace LinkSearch
         public LinkSearch()
         {
             InitializeComponent();
+            url.Text = "https://www.google.com";
             webBrowser.Navigate("https://www.google.com");
         }
 
         private void Browse_Click(object sender, EventArgs e)
         {
             if(!String.IsNullOrEmpty(url.Text))
-            {
+            {                
                 webBrowser.Navigate(url.Text);
             }
         }
 
         private void Search_Click(object sender, EventArgs e)
         {
-            Regex linkParser = new Regex(@"\b(?:https?://|www\.)\S+\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex linkParser = new Regex(@"((file|gopher|news|nntp|telnet|http|ftp|https|ftps|sftp)://)+(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,15})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9\&amp;%_\./-~-]*)?", 
+                RegexOptions.Compiled | RegexOptions.IgnoreCase);
             ArrayList urls = new ArrayList();
             foreach(Match u in linkParser.Matches(webBrowser.DocumentText))
                 urls.Add(u.Value);
@@ -99,6 +101,22 @@ namespace LinkSearch
         {
             About about = new About();
             about.Show();
+        }
+
+        private void url_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter  && !String.IsNullOrEmpty(url.Text))
+            {
+                webBrowser.Navigate(url.Text);
+            }
+        }
+
+        private void keyword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !String.IsNullOrEmpty(keyword.Text))
+            {
+                Search_Click(sender, e);
+            }
         }
     }
 }
