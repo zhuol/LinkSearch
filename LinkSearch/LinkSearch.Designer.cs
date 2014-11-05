@@ -133,6 +133,7 @@
             this.injectionLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.injectionLog.FormattingEnabled = true;
+            this.injectionLog.ImeMode = System.Windows.Forms.ImeMode.On;
             this.injectionLog.Location = new System.Drawing.Point(5, 246);
             this.injectionLog.Margin = new System.Windows.Forms.Padding(2);
             this.injectionLog.Name = "injectionLog";
@@ -149,6 +150,7 @@
             this.sqli.TabIndex = 9;
             this.sqli.Text = "SQLi";
             this.sqli.UseVisualStyleBackColor = true;
+            this.sqli.Click += new System.EventHandler(this.sqli_Click);
             // 
             // groupBox1
             // 

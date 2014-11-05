@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.IO;
+using IronPython.Hosting;
+using Microsoft.Scripting;
+using Microsoft.Scripting.Hosting;
 
 namespace LinkSearch
 {
@@ -56,6 +59,7 @@ namespace LinkSearch
                     urlList.Items.Add(u.ToString());
                 }
             }
+            urlList.HorizontalScrollbar = true;
         }
 
         private void Export_Click(object sender, EventArgs e)
@@ -117,6 +121,33 @@ namespace LinkSearch
             {
                 Search_Click(sender, e);
             }
+        }
+
+        private void sqli_Click(object sender, EventArgs e)
+        {
+            injectionLog.Items.Clear();
+            string script = File.ReadAllText(@"res/hello.py");
+            var engine = Python.CreateEngine();
+            var outputStream = new MemoryStream();
+            var outputStreamWriter = new StreamWriter(outputStream);
+            engine.Runtime.IO.SetOutput(outputStream, outputStreamWriter); 
+
+            var scope = engine.CreateScope();
+            var sourceCode = engine.CreateScriptSourceFromString(script);
+            sourceCode.Execute(scope);
+
+            var output = Encoding.ASCII.GetString(outputStream.ToArray());
+            string temp = String.Empty;
+            foreach (var c in output)
+            {
+                temp += c;
+                if (temp.Length == 100)
+                {
+                    injectionLog.Items.Add(temp);
+                    temp = String.Empty;
+                }
+            }
+            injectionLog.HorizontalScrollbar = true;
         }
     }
 }
