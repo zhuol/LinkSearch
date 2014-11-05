@@ -40,6 +40,7 @@
             this.sqli = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Browser = new System.Windows.Forms.GroupBox();
+            this.Export = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Browser.SuspendLayout();
@@ -49,39 +50,35 @@
             // 
             this.keyword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.keyword.Location = new System.Drawing.Point(7, 22);
-            this.keyword.Margin = new System.Windows.Forms.Padding(4);
+            this.keyword.Location = new System.Drawing.Point(5, 18);
             this.keyword.Name = "keyword";
-            this.keyword.Size = new System.Drawing.Size(275, 22);
+            this.keyword.Size = new System.Drawing.Size(207, 20);
             this.keyword.TabIndex = 2;
             // 
             // webBrowser
             // 
             this.webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser.Location = new System.Drawing.Point(16, 55);
-            this.webBrowser.Margin = new System.Windows.Forms.Padding(4);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(27, 25);
+            this.webBrowser.Location = new System.Drawing.Point(12, 45);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(1048, 572);
+            this.webBrowser.Size = new System.Drawing.Size(786, 465);
             this.webBrowser.TabIndex = 3;
             // 
             // url
             // 
             this.url.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.url.Location = new System.Drawing.Point(16, 25);
-            this.url.Margin = new System.Windows.Forms.Padding(4);
+            this.url.Location = new System.Drawing.Point(12, 20);
             this.url.Name = "url";
-            this.url.Size = new System.Drawing.Size(961, 22);
+            this.url.Size = new System.Drawing.Size(722, 20);
             this.url.TabIndex = 4;
             // 
             // Browse
             // 
             this.Browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Browse.Location = new System.Drawing.Point(985, 22);
-            this.Browse.Margin = new System.Windows.Forms.Padding(4);
+            this.Browse.Location = new System.Drawing.Point(739, 18);
             this.Browse.Name = "Browse";
-            this.Browse.Size = new System.Drawing.Size(79, 28);
+            this.Browse.Size = new System.Drawing.Size(59, 23);
             this.Browse.TabIndex = 5;
             this.Browse.Text = "Browse";
             this.Browse.UseVisualStyleBackColor = true;
@@ -90,10 +87,9 @@
             // Search
             // 
             this.Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Search.Location = new System.Drawing.Point(290, 19);
-            this.Search.Margin = new System.Windows.Forms.Padding(4);
+            this.Search.Location = new System.Drawing.Point(218, 15);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 28);
+            this.Search.Size = new System.Drawing.Size(56, 23);
             this.Search.TabIndex = 1;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
@@ -106,11 +102,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.urlList.FormattingEnabled = true;
             this.urlList.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.urlList.ItemHeight = 16;
-            this.urlList.Location = new System.Drawing.Point(7, 55);
-            this.urlList.Margin = new System.Windows.Forms.Padding(4);
+            this.urlList.Location = new System.Drawing.Point(5, 45);
             this.urlList.Name = "urlList";
-            this.urlList.Size = new System.Drawing.Size(358, 212);
+            this.urlList.Size = new System.Drawing.Size(270, 173);
             this.urlList.TabIndex = 6;
             // 
             // menuStrip1
@@ -120,33 +114,36 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1483, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1112, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // injectionLog
             // 
             this.injectionLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.injectionLog.FormattingEnabled = true;
-            this.injectionLog.ItemHeight = 16;
-            this.injectionLog.Location = new System.Drawing.Point(7, 303);
+            this.injectionLog.Location = new System.Drawing.Point(5, 246);
+            this.injectionLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.injectionLog.Name = "injectionLog";
-            this.injectionLog.Size = new System.Drawing.Size(358, 324);
+            this.injectionLog.Size = new System.Drawing.Size(270, 264);
             this.injectionLog.TabIndex = 8;
             // 
             // sqli
             // 
             this.sqli.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sqli.Location = new System.Drawing.Point(290, 274);
+            this.sqli.Location = new System.Drawing.Point(218, 223);
+            this.sqli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sqli.Name = "sqli";
-            this.sqli.Size = new System.Drawing.Size(75, 23);
+            this.sqli.Size = new System.Drawing.Size(56, 19);
             this.sqli.TabIndex = 9;
             this.sqli.Text = "SQLi";
             this.sqli.UseVisualStyleBackColor = true;
@@ -156,14 +153,17 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.Export);
             this.groupBox1.Controls.Add(this.keyword);
             this.groupBox1.Controls.Add(this.sqli);
             this.groupBox1.Controls.Add(this.Search);
             this.groupBox1.Controls.Add(this.injectionLog);
             this.groupBox1.Controls.Add(this.urlList);
-            this.groupBox1.Location = new System.Drawing.Point(12, 31);
+            this.groupBox1.Location = new System.Drawing.Point(9, 25);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 639);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(279, 519);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SQLi";
@@ -175,26 +175,38 @@
             this.Browser.Controls.Add(this.webBrowser);
             this.Browser.Controls.Add(this.url);
             this.Browser.Controls.Add(this.Browse);
-            this.Browser.Location = new System.Drawing.Point(399, 31);
+            this.Browser.Location = new System.Drawing.Point(299, 25);
+            this.Browser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Browser.Name = "Browser";
-            this.Browser.Size = new System.Drawing.Size(1071, 639);
+            this.Browser.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Browser.Size = new System.Drawing.Size(803, 519);
             this.Browser.TabIndex = 11;
             this.Browser.TabStop = false;
             this.Browser.Text = "Browser";
             // 
+            // Export
+            // 
+            this.Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Export.Location = new System.Drawing.Point(6, 223);
+            this.Export.Name = "Export";
+            this.Export.Size = new System.Drawing.Size(67, 19);
+            this.Export.TabIndex = 10;
+            this.Export.Text = "Export";
+            this.Export.UseVisualStyleBackColor = true;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
+            // 
             // LinkSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1483, 674);
+            this.ClientSize = new System.Drawing.Size(1112, 548);
             this.Controls.Add(this.Browser);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LinkSearch";
             this.Text = "LinkSearch";
             this.menuStrip1.ResumeLayout(false);
@@ -222,6 +234,7 @@
         private System.Windows.Forms.Button sqli;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox Browser;
+        private System.Windows.Forms.Button Export;
     }
 }
 
